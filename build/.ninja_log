@@ -1,0 +1,7 @@
+# ninja log v5
+1	1700	1639325567912366611	CMakeFiles/membot.dir/src/graphnode.cpp.o	1fdc9468d817ddd7
+1	1740	1639325567952366703	CMakeFiles/membot.dir/src/graphedge.cpp.o	cd2bbabf585128f1
+0	2888	1639325569100369353	CMakeFiles/membot.dir/src/chatgui.cpp.o	c467bfa89c26341e
+1	3583	1639325569796370961	CMakeFiles/membot.dir/src/chatlogic.cpp.o	c851333ee7e132f9
+0	4183	1639325570396372347	CMakeFiles/membot.dir/src/chatbot.cpp.o	6b51313a9b29e5da
+4184	4592	1639325570800373281	membot	ee7be8fb12bc96fc

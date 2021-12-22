@@ -1,0 +1,3 @@
+/home/alsarmi/Udacity_C++/CppND-Memory-Management-Chatbot/build/CMakeFiles/rebuild_cache.dir
+/home/alsarmi/Udacity_C++/CppND-Memory-Management-Chatbot/build/CMakeFiles/edit_cache.dir
+/home/alsarmi/Udacity_C++/CppND-Memory-Management-Chatbot/build/CMakeFiles/membot.dir
