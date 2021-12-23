@@ -1,0 +1,71 @@
+
+// define all graph nodes
+<TYPE:NODE><ID:0><ANSWER:Welcome! My name is MemBot. You can ask me about things related to memory management in C++. Possible topics are 'pointers','memory leaks' and 'the C++ memory model'. What would you like to talk about?>
+
+<TYPE:NODE><ID:1><ANSWER:Great! Let's talk about pointers. In computer science, a pointer is a special value whose meaning is a memory address. This address can contain either data, such as variables or objects, but also program codes (instructions). By dereferencing the pointer it is possible to access the data or the code. Among other things, pointers are used to manage dynamic memory. Other topics around pointers you can ask about are 'smart pointers','dangling pointers' and 'nullptr'>
+
+<TYPE:NODE><ID:2><ANSWER:When instantiating variables, programmers can choose wether to do this on the heap, on the stack or in static memory. As well, a basic memory architecture consists of four parts: Code Segment, Data Segment, Stack and Heap. Do you want to know more about those four concepts? Simply ask me about 'heap','data segment','code segment', 'stack' or 'static'.>
+
+<TYPE:NODE><ID:3><ANSWER:A smart pointer is an object that behaves like a pointer, i.e. it must support pointer operations such as dereferencing or indirect access. In addition to these properties, the smart pointer handles resources better. In concrete terms, this means that it takes care not to cause a memory leak. A smart pointer exists in various flavors, which are unique_ptr, shared_ptr and weak_ptr. There are no more topics in this section, starting over!>
+
+<TYPE:NODE><ID:4><ANSWER:The value nullptr can be assigned to pointers of any type. This turns the pointer into a null pointer that does not point to a memory location. The nullptr keyword can be used to test if a pointer or handle reference is null before the reference is used. In legacy code, it is common to find 'NULL' and '0'. Do you want to know which keyword is preferred as best practice? Possible topic is 'When should I use 'NULL','0' or 'nullptr'?>
+
+<TYPE:NODE><ID:5><ANSWER:Local variables declared as part of a function are stored on the stack. Also, the stack is the place where function parameters are stored. Further, the stack is used for storing the return address of the calling functions, and it keeps the register contents and return address when an interrupt service routine is called. The stack is usually pre-allocated memory. It follows a LIFO structure. Once a variable declared in the stack goes out of scope, the memory allocated for that variable is deallocated. The stack grows and shrinks when functions in scope push and pop variables.-- There are no more topics in this section, starting over!>
+
+<TYPE:NODE><ID:6><ANSWER:Heap memory, also known as dynamic memory, is an alternative to local stack memory. Local memory is allocated automatically on function call and it is deallocated automatically when a function exits. Heap memory is different. The programmer explicitly requests the allocation of a memory block of a particular size, and the block continues to be allocated until the programmer explicitly requests that it be deallocated. Memory is allocated using 'new' and deallocated with 'delete'-- There are no more topics in this section, starting over!>
+
+<TYPE:NODE><ID:7><ANSWER:Static memory persists throughout the entire life of the program, and is usually used to store things like global variables, or variables created with the static clause. -- There are no more topics in this section, starting over!>
+
+//Knowledge base extension reference: https://isocpp.org/wiki/faq/freestore-mgmt
+
+<TYPE:NODE><ID:8><ANSWER: Compiled programs with executive instructions are sotred in the code segment. It is read only. To avoid conflicts with heap and stack space, the code segment is stored below the stack and heap.-- There are no more topics in this section, starting over!>
+
+<TYPE:NODE><ID:9><ANSWER:The Data segment is  part of the memory responsible for storing global and static variables.-- There are no more topics in this section, starting over!>
+
+<TYPE:NODE><ID:10><ANSWER:Great! Let us talk about memory leaks! Memory leak mainly happen due to the mismanagement of memory allocations and deallocations. In most cases they occur in dynamic memory allocation. Specifically, memory leak occurs when programmers allocate memory by using 'new' operator keyword to allocate an object in the heap. However, most often than not, programmers forget to deallocate memory at the correct place or forget at all to do so by not calling the 'delete' operator keyword. By not deallocating properly memory, the memory footprint of the program grows unbounded, which will inevitably cause performance issues and failure of the program when memory is exhausted.  Clearly, if your code has 'new' operations, 'delete' operations, and pointer arithmetic all over the place, you are going to mess up somewhere and get leaks, dangling pointers, etc. This is true independently of how conscientious you are with your allocations: eventually the complexity of the code will overcome the time and effort you can afford. Do you want to know how to avoid it? Possible topic is 'deal with memory leaks'.>
+
+<TYPE:NODE><ID:11><ANSWER:Memory leaks can be avoided by relying on hiding allocation and deallocation inside more manageable types: For single objects, prefer make_unique or make_shared. For multiple objects, prefer using standard containers like vector and unordered_map as they manage memory for their elements better than you could without disproportionate effort.-- There are no more topics in this section, starting over!>
+
+<TYPE:NODE><ID:12><ANSWER:Dangling pointers are basically pointers pointing to a memory location of an already deleted object.Dangling pointers arise due to object destruction, when an object reference is deleted or deallocated, without modifying the value of the pointer, so the pointer will keep on pointing to the same memory location. This problem can be avoided by setting the pointer to 'nullptr' after deleting the object it points to.-- There are no more topics in this section, starting over!>
+
+<TYPE:NODE><ID:13><ANSWER:You should use nullptr as the null pointer value. The others still work for backward compatibility with older code. A problem with both NULL and 0 as a null pointer value is that 0 is a special “maybe an integer value and maybe a pointer” value. Use 0 only for integers, and that confusion disappears.-- There are no more topics in this section, starting over!>
+
+<TYPE:NODE><ID:14><ANSWER:>
+
+<TYPE:NODE><ID:15><ANSWER:>
+
+<TYPE:NODE><ID:16><ANSWER:>
+
+<TYPE:NODE><ID:17><ANSWER:>
+
+<TYPE:NODE><ID:18><ANSWER:>
+
+<TYPE:NODE><ID:19><ANSWER:>
+
+<TYPE:NODE><ID:20><ANSWER:>
+
+
+
+// connect nodes with edges
+<TYPE:EDGE><ID:0><PARENT:0><CHILD:1><KEYWORD:pointer><KEYWORD:smart pointer>
+<TYPE:EDGE><ID:1><PARENT:0><CHILD:2><KEYWORD:memory model><KEYWORD:heap><KEYWORD:stack>
+<TYPE:EDGE><ID:2><PARENT:0><CHILD:10><KEYWORD:memory leaks><KEYWORD:leak><KEYWORD:leaks>
+
+
+<TYPE:EDGE><ID:3><PARENT:1><CHILD:3><KEYWORD:unique pointer><KEYWORD:shared pointer><KEYWORD:weak pointer>
+<TYPE:EDGE><ID:4><PARENT:1><CHILD:4><KEYWORD:NULL><KEYWORD:null pointer><KEYWORD:nullptr>
+<TYPE:EDGE><ID:5><PARENT:1><CHILD:12><KEYWORD:dangling><KEYWORD:dangling pointer>
+
+
+
+<TYPE:EDGE><ID:6><PARENT:2><CHILD:5><KEYWORD:stack><KEYWORD:stack memory><KEYWORD:local variable storage>
+<TYPE:EDGE><ID:7><PARENT:2><CHILD:6><KEYWORD:heap><KEYWORD:heap memory><KEYWORD:dynamic storage>
+<TYPE:EDGE><ID:8><PARENT:2><CHILD:7><KEYWORD:static><KEYWORD:static memory><KEYWORD:global variable storage>
+<TYPE:EDGE><ID:9><PARENT:2><CHILD:8><KEYWORD:segment><KEYWORD:code segment><KEYWORD:compiled program>
+<TYPE:EDGE><ID:10><PARENT:2><CHILD:9><KEYWORD:segment><KEYWORD:data segment>
+
+<TYPE:EDGE><ID:11><PARENT:10><CHILD:11><KEYWORD:deal><KEYWORD:memory leaks><KEYWORD:leaks>
+
+
+13
+
