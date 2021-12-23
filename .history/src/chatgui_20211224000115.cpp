@@ -293,5 +293,5 @@ ChatBotPanelDialogItem::ChatBotPanelDialogItem(wxPanel *parent, wxString text,
   //   this->SetBackgroundColour((isFromUser == true ? wxT("YELLOW") :
   //   wxT("BLUE")));
   this->SetBackgroundColour(wxColor(*wxTransparentColour));
-  // wxSystemSettings::GetColour(wxSYS_COLOUR_BACKGROUND));
+      wxSystemSettings::GetColour(wxColor(*wxTransparentColour)));
 }
