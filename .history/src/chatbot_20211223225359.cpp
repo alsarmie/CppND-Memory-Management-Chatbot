@@ -44,8 +44,8 @@
 ChatBot::ChatBot()
     : _image(nullptr), _chatLogic(nullptr), _rootNode(nullptr),
       _currentNode(nullptr) {
-
-  // std::cout << "ChatBot Constructor (No Memory allocation)" << std::endl;
+  // invalidate data handles
+  std::cout << "ChatBot Constructor (No Memory allocation)" << std::endl;
 }
 
 /**
@@ -57,7 +57,7 @@ ChatBot::ChatBot()
 //! Constructor (With Memory allocation)
 ChatBot::ChatBot(std::string filename)
     : _chatLogic(nullptr), _rootNode(nullptr), _currentNode(nullptr) {
-  std::cout << "ChatBot Constructor" << std::endl;
+  // std::cout << "ChatBot Constructor (With Memory allocation)" << std::endl;
   // load avatar image into heap memory
   _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
 }
@@ -105,7 +105,7 @@ ChatBot::ChatBot(const ChatBot &chatbot)
 //! Move Constructor
 ChatBot::ChatBot(ChatBot &&chatbot) noexcept
     : ChatBot() { // default constructor initialization
-  std::cout << "ChatBot Move Constructor" << std::endl;
+  std::cout << "ChatBot Move Constructor Operator" << std::endl;
 
   swap(*this, chatbot);
 }
